@@ -21,16 +21,16 @@
     <script data-template-name='index' type='text/x-handlebars'>
       <ul>
       {{#each item in model}}
-      {{#view App.SelectView value=item checked=controller.checked}}
+      {{#select-widget value=item checked=controller.checked}}
       {{item.name}}
-      {{/view}}
+      {{/select-widget}}
       {{/each}}
       </ul>
     </script>
     <script type='text/javascript'>
       var select = require('ember-check');
       App = Em.Application.create();
-      App.SelectView = Em.View.extend(select, {
+      App.SelectWidgetComponent = Em.Component.extend(select, {
         tagName: 'li',
         optionSelectPath: 'name'
       });
